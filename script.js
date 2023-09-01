@@ -12,7 +12,7 @@ document.getElementById('btnCalculate').addEventListener('click', function () {
    
     let com;
     let holdback;
-    
+    let total;
     // let com1 = 0;
     // let total1 = 0;
     // let percentage = 0;
@@ -25,22 +25,22 @@ document.getElementById('btnCalculate').addEventListener('click', function () {
     com = 0;
    // console.log("From 0% to 50%: " + result);
 
-    if (salesRenewal >= targetRenewal * 0.5) {
+    if (salesRenewal > targetRenewal * 0.5) {
         result = Math.min(salesRenewal - targetRenewal * 0.5, targetRenewal * 0.8 - targetRenewal * 0.5);
         com = salesRenewal * 0.1;
     }
   //  console.log("From 50% to 80%: " + result);
 
-    if (salesRenewal >= targetRenewal * 0.8) {
+    if (salesRenewal > targetRenewal * 0.8) {
         result = Math.min(salesRenewal - targetRenewal * 0.8, targetRenewal - targetRenewal * 0.8);
         com = salesRenewal * 0.15;
     }
     
     holdback = com*0.20;
-
-    document.getElementById('result').textContent = "Commission: " + com;
-    document.getElementById('-20%').textContent = "Monthly Holdback: " + holdback;
-    document.getElementById('total commission').textContent = "Total Commission: " + (com-holdback);
+    total = com-holdback;
+    document.getElementById('result').textContent = "Commission: " + com.toFixed(2);
+    document.getElementById('-20%').textContent = "Monthly Holdback: " + holdback.toFixed(2);
+    document.getElementById('total commission').textContent = "Total Commission: " + total.toFixed(2);
     //console.log("From 80% to 100%: " + result);
 
     // if (salesRenewal >= targetRenewal * 0.95) {
