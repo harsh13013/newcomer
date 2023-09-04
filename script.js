@@ -1,5 +1,6 @@
 document.getElementById('btnCalculate').addEventListener('click', function () {
-    // Get user inputs
+   // Get user inputs
+
   //const otc = parseInt(document.getElementById('otc').value);
     const targetRenewal = parseInt(document.getElementById('targetRenewal').value);
     const salesRenewal = parseInt(document.getElementById('salesRenewal').value);
@@ -38,9 +39,11 @@ document.getElementById('btnCalculate').addEventListener('click', function () {
     
     holdback = com*0.20;
     total = com-holdback;
-    document.getElementById('result').textContent = "Commission: " + com.toFixed(2);
-    document.getElementById('-20%').textContent = "Monthly Holdback: " + holdback.toFixed(2);
-    document.getElementById('total commission').textContent = "Total Commission: " + total.toFixed(2);
+
+    document.getElementById('result').textContent = "Commission: " + com.toLocaleString();
+    document.getElementById('-20%').textContent = "Monthly Holdback: " + holdback.toLocaleString();
+    document.getElementById('total commission').textContent = "Total Commission: " + total.toLocaleString();
+
     //console.log("From 80% to 100%: " + result);
 
     // if (salesRenewal >= targetRenewal * 0.95) {
